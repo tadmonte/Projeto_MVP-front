@@ -1,0 +1,137 @@
+body,
+ul,
+li {
+    font-family: tahoma;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0px;
+    background-color: rgb(225, 222, 199);
+}
+
+header {
+    background-color: rgb(225, 222, 199);
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.title {
+    color: white;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: inline-block;
+    padding: 0px 0px;
+    position: sticky;
+    top: 0px;
+}
+
+.banner {
+    height: 30vh;
+    overflow: hidden;
+}
+
+.banner img {
+    margin: 0px 0px 0px 0px;
+    width: 100%;
+    background-size: cover;
+}
+
+.newItem {
+    background-color: rgb(209, 20, 209, 0.5);
+    padding: 15px 25px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.newItem:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#newInput {
+    margin: 0;
+    border: 1px solid rgb(209, 20, 209);
+    width: 25%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+
+}
+
+#newPrice, #newDate, #newQuantity, #newPlace {
+    margin: 0;
+    border: 1px solid rgb(209, 20, 209);
+    width: 10%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-left: 6px;
+}
+
+
+
+.addBtn {
+    padding: 9px 10px;
+    background-color: rgb(3, 0, 3);
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 8px;
+    margin-left: 6px;
+
+}
+
+.addBtn:hover {
+    background-color: #2ab53a;
+    color: rgb(255, 255, 255);
+}
+
+.items {
+    margin: 15px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.close:hover {
+    color: #f44336;
+    font-weight: bolder;
+}
+
+
+td {
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    padding: 8px 6px 8px 6px;
+    font-size: 18px;
+    transition: 0.2s;
+    text-align: start;
+    
+}
+
+table{
+    background-color: white;
+    width: 80%;
+
+}
+
+tr:nth-child(odd){
+    background-color: #eee;
+}
+
+th:nth-child(1){
+    width: 80%;
+}
+
+tr:hover {
+    background: rgb(200, 199, 199);
+}
+
