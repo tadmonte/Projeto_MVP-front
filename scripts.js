@@ -116,7 +116,7 @@ const newItem = () => {
   let inputDate = document.getElementById("newDate").value;
   console.log(inputDate)
   if (inputProduct === '') {
-    return alert("Escreva o nome de um item!");
+    return alert("Escreva o nome do Consumível!");
   }
   if (isNaN(inputQuantity) || isNaN(inputPrice)) {
     return alert("Quantidade e valor precisam ser números!");
@@ -149,5 +149,5 @@ const insertList = (nameProduct, quantity, price, unit, date) => {
   document.getElementById("newUnit").value = "";
   document.getElementById("newDate").value = "";
 
-  removeElement()
+  removeElement()                                                                                                                                                            
 }
