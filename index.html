@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    
+
     <header>
         <div class="title">
             <h2>Gerenciamento de Consumíveis</h2>
@@ -20,15 +20,33 @@
 
     </header>
 
-    
+
     <section class="newItem">
 
         <div class="form">
             <span>Preencha o formulário para adicionar um novo produto:</span>
-            <input type="text" id="newInput" placeholder="Produto">
-            <input type="number" id="newQuantity" placeholder="Quantidade (Ampolas):">
+            <select id="newInput" name="opcoes">
+                <option value="" disabled selected>Selecione um produto</option>
+                <option value="Toxina Botulínica 3ml">Toxina Botulínica 3ml</option>
+                <option value="Toxina Botulínica 5ml">Toxina Botulínica 5ml</option>
+                <option value="Toxina Botulínica 7ml">Toxina Botulínica 7ml</option>
+                <option value="Toxina Botulínica 10ml">Toxina Botulínica 10ml</option>
+                <option value="Sculptra - Frasco 50mg">Sculptra - Frasco 50mg</option>
+                <option value="Sculptra - Frasco 100mg">Sculptra - Frasco 100mg</option>
+                <option value="Sculptra - Frasco 150mg">Sculptra - Frasco 150mg</option>
+            </select>
+            <select id="newUnit" name="opcoes">
+                <option value="" disabled selected>Selecione a unidade</option>
+                <option value="Rio Design Leblon - RJ">Rio Design Leblon - RJ</option>
+                <option value="Rio Design Barra - RJ">Rio Design Barra - RJ</option>
+                <option value="Barra Shopping - RJ">Barra Shopping - RJ</option>
+                <option value="Shopping Tijuca - RJ">Shopping Tijuca - RJ</option>                
+                <option value="Shopping Nova América - RJ">Shopping Nova América - RJ</option>
+                <option value="Plaza Shopping Niterói - RJ">Plaza Shopping Niterói - RJ</option>
+                <option value="Diamond Mall - BH">Diamond Mall - BH</option>
+            </select>
+            <input type="number" id="newQuantity" placeholder="Quantidade:" step="10">
             <input type="number" min="0.00" max="10000.00" step="0.01" id="newPrice" placeholder="Valor (R$):">
-            <input type="text" id="newUnit" placeholder="Unidade:">
             <input type="date" id="newDate" placeholder="Validade:">
 
             <button onclick="newItem()" class="addBtn">Adicionar</button>
@@ -42,7 +60,8 @@
                     <th>Valor</th>
                     <th>Unidade</th>
                     <th>Validade</th>
-                    <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15px" height="15px"></th>
+                    <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15px" height="15px">
+                    </th>
                 </tr>
             </table>
         </div>
