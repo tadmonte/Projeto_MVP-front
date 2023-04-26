@@ -1,4 +1,4 @@
-# Meu Front
+# Front Gerenciamento de Consumíveis
 
 Este MVP faz parte do projeto final da disciplina de **Desenvolvimento Full Stack Básico** do curso de Pós Graduação em Engenharia de Software da PUC-Rio.
 
