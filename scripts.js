@@ -4,7 +4,7 @@
   --------------------------------------------------------------------------------------
 */
 const getList = async () => {
-  let url = 'http://127.0.0.1:5000/produtos';
+  let url = 'http://127.0.0.1:5000/lista';
   fetch(url, {
     method: 'get',
   })
@@ -39,7 +39,7 @@ const postItem = async (inputProduct, inputQuantity, inputPrice, inputUnit, inpu
 
   const body = { nome: inputProduct, quantidade: inputQuantity, valor: inputPrice, unidade: inputUnit, validade: inputDate }
 
-  let url = 'http://127.0.0.1:5000/produto';
+  let url = 'http://127.0.0.1:5000/item';
   try {
     const result = await fetch(url, {
       method: 'post',
@@ -101,7 +101,7 @@ const removeElement = (id) => {
 */
 const deleteItem = (item) => {
   console.log(item)
-  let url = 'http://127.0.0.1:5000/produto?id=' + item;
+  let url = 'http://127.0.0.1:5000/excluir?id=' + item;
   fetch(url, {
     method: 'delete'
   })
