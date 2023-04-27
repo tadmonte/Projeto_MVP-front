@@ -10,7 +10,12 @@ const getList = async () => {
   })
     .then((response) => response.json())
     .then((data) => {
-      data.produtos.forEach(item => insertList(item.nome, item.quantidade, item.valor, item.unidade, item.validade))
+      data.produtos.forEach(item => {
+        const date = new Date(item.validade)
+          const dateFormated = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()}`
+        insertList(item.nome, item.quantidade, item.valor, item.unidade, dateFormated)
+
+      })
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -149,5 +154,5 @@ const insertList = (nameProduct, quantity, price, unit, date) => {
   document.getElementById("newUnit").value = "";
   document.getElementById("newDate").value = "";
 
-  removeElement()                                                                                                                                                            
+  removeElement()
 }
