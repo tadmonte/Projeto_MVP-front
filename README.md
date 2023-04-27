@@ -8,3 +8,7 @@ O objetivo aqui é ilutsrar o conteudo apresentado nas aulas usando como o exemp
 ## Como executar
 
 Basta fazer o download do projeto e abrir o arquivo index.html no seu browser.
+
+Caso tenha a extensão live server você pode em seu VScode selecionar o araquivo index.html com o botão direito do mouse e acessar a opção "Open Live Server", assim podendo acessar o link abaixo.
+
+**http://localhost:5500/index.html**
