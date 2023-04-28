@@ -11,7 +11,7 @@ const getList = async () => {
     .then((response) => response.json())
     .then((data) => {
       data.produtos.forEach(item => {
-        
+
         insertList(item.nome, item.quantidade, item.valor, item.unidade, item.validade, item.id,)
 
       })
@@ -63,10 +63,11 @@ const postItem = async (inputProduct, inputQuantity, inputPrice, inputUnit, inpu
   Função para criar um botão close para cada item da lista
   --------------------------------------------------------------------------------------
 */
-const insertButton = (parent) => {
+const insertButton = (parent, id) => {
   let span = document.createElement("span");
   let txt = document.createTextNode("\u00D7");
   span.className = "close";
+  parent.setAttribute("id", id);
   span.appendChild(txt);
   parent.appendChild(span);
 }
@@ -77,19 +78,21 @@ const insertButton = (parent) => {
   Função para remover um item da lista de acordo com o click no botão close
   --------------------------------------------------------------------------------------
 */
-const removeElement = (id) => {
+const removeElement = () => {
   let close = document.getElementsByClassName("close");
   // var table = document.getElementById('myTable');
   let i;
   for (i = 0; i < close.length; i++) {
+    console.log(close[i])
     close[i].onclick = function () {
       let div = this.parentElement.parentElement;
-
+      let parent = this.parentElement;
       if (confirm("Você tem certeza?")) {
         div.remove()
-        deleteItem(id)
+        deleteItem(parent.id)
         alert("Removido!")
       }
+
     }
   }
 }
@@ -116,7 +119,7 @@ const deleteItem = (item) => {
   Função para adicionar um novo item com nome, quantidade e valor 
   --------------------------------------------------------------------------------------
 */
-const newItem = async() => {
+const newItem = async () => {
   let inputProduct = document.getElementById("newInput").value;
   let inputQuantity = document.getElementById("newQuantity").value;
   let inputPrice = document.getElementById("newPrice").value;
@@ -131,8 +134,8 @@ const newItem = async() => {
   }
   const item = await postItem(inputProduct, inputQuantity, inputPrice, inputUnit, inputDate)
   console.log(item)
-  insertList(item.nome, item.quantidade, item.valor,item.unidade, item.validade, item.id)
- 
+  insertList(item.nome, item.quantidade, item.valor, item.unidade, item.validade, item.id)
+
   alert("Item adicionado!")
 
 }
@@ -144,7 +147,7 @@ const newItem = async() => {
 */
 const insertList = (nameProduct, quantity, price, unit, date, id) => {
   const datex = new Date(date)
-        const dateFormated = `${datex.getDate()}-${datex.getMonth()}-${datex.getFullYear()}`
+  const dateFormated = `${datex.getDate()}-${datex.getMonth()}-${datex.getFullYear()}`
   var item = [nameProduct, quantity, price, unit, dateFormated]
   var table = document.getElementById('myTable');
   var row = table.insertRow();
@@ -153,12 +156,12 @@ const insertList = (nameProduct, quantity, price, unit, date, id) => {
     var cel = row.insertCell(i);
     cel.textContent = item[i];
   }
-  insertButton(row.insertCell(-1))
+  insertButton(row.insertCell(-1), id)
   document.getElementById("newInput").value = "";
   document.getElementById("newQuantity").value = "";
   document.getElementById("newPrice").value = "";
   document.getElementById("newUnit").value = "";
   document.getElementById("newDate").value = "";
 
-  removeElement(id)
+  removeElement()
 }
