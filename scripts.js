@@ -165,3 +165,33 @@ const insertList = (nameProduct, quantity, price, unit, date, id) => {
 
   removeElement()
 }
+
+
+
+
+const getclima = async () => {
+  var requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
+
+  const result = await fetch("http://apiadvisor.climatempo.com.br/api/v1/anl/synoptic/locale/BR?token=b98bb04491563d10dc2bd24d02e3d48c", requestOptions)
+  const data = await result.json()
+
+  console.log(data[0].text)
+  
+  var clima = document.getElementById('clima');
+  
+    let p = document.createElement("p");
+   
+    
+    p.innerHTML = (data[0].text);
+    clima.appendChild(p);
+  
+}
+
+
+
+
+
+getclima()
