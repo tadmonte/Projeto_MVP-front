@@ -190,7 +190,24 @@ const getclima = async () => {
   
 }
 
+// Função para deletar a tabela inteira
+function deletarTabela() {
+  let url = 'http://127.0.0.1:5000/deletartodos'
+  var tabela = document.getElementById('myTable');
+  fetch(url, {
+    method: 'delete'
+  })
 
+  .then((response) => {
+    if (response.ok) {
+      console.log('Dados excluídos com sucesso no servidor.');
+
+      location.reload();
+}})
+
+
+
+}
 
 
 
