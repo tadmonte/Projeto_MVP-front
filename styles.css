@@ -34,7 +34,15 @@ header {
 }
 
 
-
+.clima {
+    background-color: #a2c74b; 
+    padding: 5px;
+    border: 1px solid #a2c74b; 
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    max-width: 800px;
+    margin: 0 auto;
+}
 
 
 .newItem {
